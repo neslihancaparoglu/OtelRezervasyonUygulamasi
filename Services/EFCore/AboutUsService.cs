@@ -25,7 +25,7 @@ namespace Services.EFCore
         public IEnumerable<AboutUsDto> GetAllAboutUs()
         {
             var aboutUsList = _repository.AboutUs.GenericRead(false);
-            var aboutUsDtoList = _mapper.Map<IEnumerable<AboutUsDto>>(aboutUsList);
+            IEnumerable<AboutUsDto> aboutUsDtoList = _mapper.Map<IEnumerable<AboutUsDto>>(aboutUsList);
             return aboutUsDtoList;
         }
 
