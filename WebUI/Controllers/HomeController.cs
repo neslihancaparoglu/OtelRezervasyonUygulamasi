@@ -19,10 +19,17 @@ namespace WebUI.Controllers
         {
             return View();
         }
-
-        public IActionResult Privacy()
+        public IActionResult AboutUs()
         {
-            return View();
+            return View("AboutUs");
+        }
+        public IActionResult Contacts()
+        {
+            return View("Contacts");
+        }
+        public IActionResult Typography()
+        {
+            return View("Typography");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
