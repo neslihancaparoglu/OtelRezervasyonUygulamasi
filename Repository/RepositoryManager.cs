@@ -1,6 +1,5 @@
 ﻿using Repository.Contracts;
 using Repository.EFCore;
-using Repository.EFCore.Config;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,22 +11,29 @@ namespace Repository
     public class RepositoryManager : IRepositoryManager
     {
         private readonly RepositoryContext _context;
+        
         private readonly Lazy<IRepositoryUser> _repositoryUser;
-        private readonly Lazy<IRepositoryAboutUs> _repositoryAboutUs;
+        private readonly Lazy<IRepositoryUser> _repositoryRoom;
 
         public RepositoryManager(RepositoryContext context)
         {
             _context = context;
-            _repositoryAboutUs = new Lazy<IRepositoryAboutUs>(() => new RepositoryAboutUs(_context));
+           
             _repositoryUser = new Lazy<IRepositoryUser>(() => new RepositoryUser(_context));
-            
+            _repositoryRoom = new Lazy<IRepositoryUser>(() => new RepositoryUser(_context));
+
         }
-        public IRepositoryAboutUs AboutUs => _repositoryAboutUs.Value;
         public IRepositoryUser User => _repositoryUser.Value;
+        public IRepositoryUser Room => _repositoryRoom.Value;
 
         public void Save()
         {
             _context.SaveChanges();
+        }
+
+        public Task SaveAsync()
+        {
+            return _context.SaveChangesAsync();
         }
     }
 }

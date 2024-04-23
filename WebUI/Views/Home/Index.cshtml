@@ -53,14 +53,15 @@
         </div>
         <div class="cell-lg-4 cell-xl-3 reveal-lg-flex">
             <div class="hotel-booking-form">
+
                 <h3>Oda tut</h3>
                 <!-- RD Mailform-->
-                <form class="rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
+                <form class="rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="/Home/Index">
                     <div class="range range-sm-bottom spacing-20">
                         <div class="cell-lg-12 cell-md-4">
                             <p class="text-uppercase">Adınız</p>
                             <div class="form-wrap">
-                                <input class="form-input" id="contact-first-name" type="text" name="name" >
+                                <input class="form-input" id="contact-first-name" type="text" name="name">
                                 <label class="form-label" for="contact-first-name">Adınızı Giriniz</label>
                             </div>
                         </div>
@@ -68,21 +69,21 @@
                             <p class="text-uppercase">Otele giriş tarihi</p>
                             <div class="form-wrap">
                                 <label class="form-label form-label-icon" for="date-in"><span class="icon icon-primary fa-calendar"></span><span>Tarih Seçiniz</span></label>
-                                <input class="form-input" id="date-in" data-time-picker="date" type="text" name="date" >
+                                <input class="form-input" id="date-in" data-time-picker="date" type="text" name="CheckInDate">
                             </div>
                         </div>
                         <div class="cell-lg-12 cell-md-4 cell-sm-6">
                             <p class="text-uppercase">Otelden çıkış tarihi</p>
                             <div class="form-wrap">
                                 <label class="form-label form-label-icon" for="date-out"><span class="icon icon-primary fa-calendar"></span><span>Tarih Seçiniz</span></label>
-                                <input class="form-input" id="date-out" data-time-picker="date" type="text" name="date" >
+                                <input class="form-input" id="date-out" data-time-picker="date" type="text" name="CheckOutDate">
                             </div>
                         </div>
                         <div class="cell-lg-6 cell-md-4 cell-xs-6">
                             <p class="text-uppercase">Yetişkin</p>
                             <div class="form-wrap form-wrap-validation">
                                 <!--Select 2-->
-                                <select class="form-input select-filter" data-minimum-results-search="-1" data-placeholder="1">
+                                <select class="form-input select-filter" data-minimum-results-search="-1" data-placeholder="1" name="Adults">
                                     <option>&nbsp;</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -96,7 +97,7 @@
                             <p class="text-uppercase">Çocuk</p>
                             <div class="form-wrap form-wrap-validation">
                                 <!--Select 2-->
-                                <select class="form-input select-filter" data-minimum-results-search="-1" data-placeholder="0">
+                                <select class="form-input select-filter" data-minimum-results-search="-1" data-placeholder="0" name="Children">
                                     <option>&nbsp;</option>
                                     <option value="1">0</option>
                                     <option value="2">1</option>
@@ -106,11 +107,26 @@
                                 </select>
                             </div>
                         </div>
+                        <div class="cell-lg-12 cell-md-4 cell-xs-12">
+                            <p class="text-uppercase">Oda tipini seç</p>
+                            <div class="form-wrap form-wrap-validation">
+                                <!--Select 2-->
+                                <select class="form-input select-filter" data-minimum-results-search="-1" data-placeholder="0" name="Rooms">
+                                    <option>&nbsp;</option>
+                                    <option value="1">Standart</option>
+                                    <option value="2">Standart Plus</option>
+                                    <option value="3">Suit</option>
+                                    <option value="4">Lux</option>
+                                    <option value="5">King</option>
+                                </select>
+                            </div>
+                        </div>
                         <div class="cell-lg-12 cell-md-4">
-                            <button class="button button-primary button-square button-block button-effect-ujarak" type="submit"><span>Müsaitliği kontrol et</span></button>
+                            <button class="button button-primary button-square button-block button-effect-ujarak" type="submit" method="post" action="/Home/Index"><span>Müsaitliği kontrol et</span></button>
                         </div>
                     </div>
                 </form>
+                
             </div>
         </div>
     </div>

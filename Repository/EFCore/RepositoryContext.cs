@@ -10,14 +10,13 @@ using System.Threading.Tasks;
 
 namespace Repository.EFCore
 {
-    public class RepositoryContext : IdentityDbContext<User>
+    public class RepositoryContext : DbContext
     {
         public RepositoryContext(DbContextOptions options) : base(options)
         {
 
         }
-
-        public DbSet<AboutUs> AboutUs { get; set; }
+        public DbSet<User> Users {  get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

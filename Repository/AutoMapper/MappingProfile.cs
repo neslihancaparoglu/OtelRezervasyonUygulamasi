@@ -13,10 +13,8 @@ namespace Repository.AutoMapper
     {
         public MappingProfile() 
         {
-            CreateMap<UserForAuthenticationDto, User>();
-            CreateMap<User, UserForRegistrationDto>();
-            CreateMap<AboutUsDto, AboutUs>();
-            CreateMap<AboutUs, AboutUsDto>();
+            CreateMap<User, UserDto>();
+            CreateMap<UserDto, User>();
         }
     }
 }

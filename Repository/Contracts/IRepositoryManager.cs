@@ -9,7 +9,7 @@ namespace Repository.Contracts
     public interface IRepositoryManager
     {
         IRepositoryUser User { get; }
-        IRepositoryAboutUs AboutUs { get; }
-        void Save();
+        IRepositoryUser Room { get; }
+        Task SaveAsync();
     }
 }

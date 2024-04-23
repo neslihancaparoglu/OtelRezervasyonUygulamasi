@@ -10,11 +10,10 @@ public class Program
         // Add services to the container.
         builder.Services.AddControllersWithViews();
         builder.Services.ConfiguratioSQLContext(builder.Configuration);
-        builder.Services.ConfiguerRepostoryManager();
-        builder.Services.ConfiguerServiceManager();
+        builder.Services.ConfigureRepositoryManager();
+        builder.Services.ConfigureServiceManager();
 
         builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
-        builder.Services.ConfigureIdentity();
 
         var app = builder.Build();
 

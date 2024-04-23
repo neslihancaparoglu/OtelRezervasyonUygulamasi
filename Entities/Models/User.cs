@@ -8,11 +8,14 @@ using System.Threading.Tasks;
 
 namespace Entities.Models
 {
-    public class User : IdentityUser
+    public class User
     {
-        public string? FirstName { get; set; }
-        public string? LastName { get; set;}
-        public string? RefreshToken { get; set; }
-        public DateTime RefreshTokenExpiryTime { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public DateTime CheckInDate { get; set; }
+        public DateTime CheckOutDate { get; set; }
+        public int Adults { get; set; }
+        public int Children {  get; set; }
+        public RoomType RoomType { get; set; }
     }
 }

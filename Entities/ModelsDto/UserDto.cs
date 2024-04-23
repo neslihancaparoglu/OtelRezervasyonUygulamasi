@@ -1,13 +1,13 @@
-﻿using System;
+﻿using Entities.Models;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entities
+namespace Entities.ModelsDto
 {
-    public class RequestParameters
+    public class UserDto
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -15,5 +15,10 @@ namespace Entities
         public DateTime CheckOutDate { get; set; }
         public int Adults { get; set; }
         public int Children { get; set; }
+        public RoomType RoomType { get; set; } // Oda tipini temsil eden bir enum
+
+        //rezervasyonun başarı durumunu belirtme
+        public bool IsReservationSuccessful { get; set; }
+        public string Message { get; set; } // Kullanıcıya gösterilecek mesaj
     }
 }
