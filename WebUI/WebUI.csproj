@@ -10,9 +10,17 @@
 
   <ItemGroup>
     <Compile Remove="Areas\**" />
+    <Compile Remove="Views\Contacts\**" />
+    <Compile Remove="Views\Typography\**" />
     <Content Remove="Areas\**" />
+    <Content Remove="Views\Contacts\**" />
+    <Content Remove="Views\Typography\**" />
     <EmbeddedResource Remove="Areas\**" />
+    <EmbeddedResource Remove="Views\Contacts\**" />
+    <EmbeddedResource Remove="Views\Typography\**" />
     <None Remove="Areas\**" />
+    <None Remove="Views\Contacts\**" />
+    <None Remove="Views\Typography\**" />
   </ItemGroup>
 
   <ItemGroup>
